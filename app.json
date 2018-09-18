@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/user/user",
+    "pages/details/details",
+    "pages/citySelect/citySelect",
+    "pages/findMovie/findMovie",
+    "pages/topicMovieList/topicMovieList",
+    "pages/details/moviePoster/moviePoster",
+    "pages/details/celebrity/celebrity",
+    "pages/details/giveRating/giveRating",
+    "pages/user/favorite/favorite",
+    "pages/user/gallery/gallery",
+    "pages/user/history/history",
+    "pages/user/setting/setting",
+    "pages/user/shake/shake",
+    "pages/user/skin/skin",
+    "pages/user/about/about",
+    "pages/user/location/location",
+    "pages/user/personinfo/personinfo",
+    "pages/user/systemInfo/systemInfo",
+    "pages/user/personInfo/personInfo",
+    "pages/user/editPersonInfo/editPersonInfo",
+    "pages/comments/comments",
+    "pages/theaterList/theaterList",
+    "pages/shop/shop",
+    "pages/shop/seat/seat",
+    "pages/shop/book/book",
+    "pages/user/recommendation/recommendation"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "豆瓣电影",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "热映",
+        "iconPath": "images/video.png",
+        "selectedIconPath": "images/video_fill.png"
+      },
+      {
+        "pagePath": "pages/findMovie/findMovie",
+        "text": "找片",
+        "iconPath": "images/browse.png",
+        "selectedIconPath": "images/browse_fill.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/people.png",
+        "selectedIconPath": "images/people_fill.png"
+      }
+    ]
+  }
+}

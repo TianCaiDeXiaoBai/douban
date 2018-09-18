@@ -1,0 +1,12 @@
+<!--pages/comments/comments.wxml-->
+<scroll-view scroll-y style="padding:10px;height:100%" bindscrolltolower="bindscrolltolower">
+ <block wx:for="{{comments}}" style="padding:10px">
+        <view class="user">
+          <image class="avatar" mode="aspectFit" style="width:30px;height:30px" src="{{item.author.avatar}}" />
+          <text style="font-size:10pt;margin-left:10px;color:lightgrey">{{item.author.name}}</text>
+          <text style="font-size:10pt;margin-left:20px;color:lightgrey">{{item.created_at}}</text>
+        </view>
+        <view class="comdetail">{{item.content}}</view>
+        <view class="line"></view>
+      </block>
+</scroll-view>

@@ -1,0 +1,12 @@
+
+<!--pages/movieGridTmp/movieGridTmp.wxml-->
+<import src="/pages/movieRatingTemplate/movieRatingTemplate.wxml" />
+<template name="movieGridTmp">
+  <view class="movie-wrapper" bindtap="bindMovieDetail" data-id="{{id}}">
+    <view class="movie-content">
+      <image class="poster" src="{{images.medium}}"></image>
+      <text class="name">{{title}}</text>
+      <template is="ratingTmp" data="{{rating}}" />
+    </view>
+  </view>
+</template>

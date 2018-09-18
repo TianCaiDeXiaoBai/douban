@@ -1,0 +1,32 @@
+/* pages/details/giveRating/giveRating.wxss */
+.star-rating{
+  margin-top: 200rpx;
+}
+.star-image{
+  position: absolute;
+  top: 50rpx;
+  margin-left: 100rpx;
+  width: 100rpx;
+  height: 100rpx;
+  src: "/images/no-star.png";
+}
+.item{
+  position: absolute;
+  top: 0px;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.reviewer{
+  height: 220rpx;
+  margin-top: 100rpx;
+  margin-left:100rpx; 
+  margin-right:100rpx; 
+  border-style: solid;
+  border-color: #AAAAAA;
+  border-width: 1px;
+}
+
+.confirm{
+  margin-top:100rpx;
+}

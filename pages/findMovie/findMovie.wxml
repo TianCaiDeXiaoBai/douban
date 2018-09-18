@@ -1,0 +1,41 @@
+<import src="/pages/movieGridTmp/movieGridTmp.wxml" />
+<import src="/pages/topicGridTmp/topicGridTmp.wxml" />
+<view class="container" bindtouchmove="handleTouchMove">
+  <view class="session-search session-search-spacing">
+    <icon class="session-search-icon" type="search" size="16"></icon>
+    <text class="search-placeholder" bindtap="bindSearchNavigate">搜索电影</text>
+  </view>
+  <view class="page-session page-session-spacing">
+    <view class="session-header">
+      <text class="session-header-title">新片榜单</text>
+      <text class="session-header-more" bindtap="bindTopicGrid" data-type-id="newMovie" data-type-title="新片榜">全部</text>
+    </view>
+    <view class="session-content session-content-spacing">
+      <scroll-view class="movie-scroll" scroll-x="true">
+        <block wx:for="{{newMovie.movies}}" wx:for-item="item" wx:key="item.id">
+          <template is="movieGridTmp" data="{{...item}}" />
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="page-session page-session-spacing">
+    <view class="session-header">
+      <text class="session-header-title">{{categoryTitle}}</text>
+    </view>
+    <view class="session-content session-content-spacing">
+      <swiper class = "topic-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange = "swiperBind">
+        <block wx:for="{{[top250, weekly, usBox]}}" wx:for-item="topicGridList">
+          <swiper-item item-id = "{{topicGridList.categoryTitle}}">
+            <block wx:for="{{topicGridList.movies}}" wx:for-item="topicGrid">
+              <template is="topicGridTmp" data="{{...topicGrid}}" />
+             </block> 
+             <view class = "topic-all-txt" bindtap="bindTopicGrid" data-type-id="{{topicGridList.categoryType}}" data-type-title="{{topicGridList.categoryTitle}}">
+              <text>全部</text>
+             </view>
+          </swiper-item>
+        </block>
+      </swiper>
+
+    </view>
+  </view>
+</view>

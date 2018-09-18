@@ -1,0 +1,7 @@
+<!--pages/user/recommendation/recommendation.wxml-->
+<import src="/pages/movieListTemplate/movieListTemplate.wxml" />
+        <scroll-view class="scroll-movie" style="height:{{windowHeight}}px" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
+          <block wx:for="{{intheaters.movies}}" wx:for-item="item" wx:key="item.id">
+            <template is="movieListTmp" data="{{...item}}" />
+          </block>
+        </scroll-view>

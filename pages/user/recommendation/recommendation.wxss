@@ -1,0 +1,5 @@
+/* pages/user/recommendation/recommendation.wxss */
+ @import "/pages/movieListTemplate/movieListTemplate.wxss"; 
+.scroll-movie {
+  height:100vh;
+}

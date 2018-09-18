@@ -1,0 +1,58 @@
+<!--pages/shop/shop.wxml-->
+<view class="head">
+  <view class="shop">
+    <view class="name">{{nm}}</view>
+    <view class="adress">{{addr}}</view>
+  </view>
+  <view class="map">
+    <view class="line"></view>
+    <view class="map-wrap" bindtap="openMap">
+      <image src="/images/txmap.png" style="width:36rpx;height:36rpx;"></image>
+      <view class="map-let">地图</view>
+    </view>
+  </view>
+</view>
+<view class="select">
+  <scroll-view scroll-x class="movies" style="height:280rpx;">
+    <view wx:for="{{movies}}" class="movies-item" bindtap="tapselect" id="{{index}}">
+      <image src="{{item.images.medium}}" class="movies-pic {{activeindex==index?'movies-pic-active':''}}"></image>
+    </view>
+  </scroll-view>
+  <image src="{{activemovie.images.medium}}" style="width:100%;height:280rpx;" class="backImg"></image>
+</view>
+<view class="bottom">
+  <view class="t-movie">
+    <view class="t-tr">
+      <view class="t-title">{{activemovie.title}}</view>
+      <view class="t-rating">{{activemovie.rating.average}}分</view>
+    </view>
+    <view class="t-jiamjie">{{activemovie.duration}}|{{activemovie.genres}}|{{activemovie.casts}}</view>
+  </view>
+  <view>
+    <view class="selectDate">
+      <view wx:for="{{threedays}}" id="{{index}}" class="oneday {{index==theday?'activeday':''}}" bindtap="selectDate">{{item}}</view>
+    </view>
+    <view class="times" wx:for="{{sessions[theday]}}">
+      <view class="time" id="{{index}}"  data-id="{{index}}" bindtap='seat'>
+        <view>
+          <view class="start">{{item.start}}</view>
+          <view class="glr">{{item.end}}散场</view>
+        </view>
+        <view class="eg">
+          <view class="effects">{{item.effects}}</view>
+          <view class="glr room">{{item.room}}</view>
+        </view>
+        <view class="pg">
+          <view class="pd">
+            <view class="price"> <text class="priceF">{{item.price}}</text><text class="priceL">元</text></view>
+            <view class="discount"><text class="disF">折扣卡</text><text class="disL">{{item.discount}}元</text></view>
+          </view>
+          <view class="glr">折扣卡首单特惠</view>
+        </view>
+        <view class="btickets">
+          购票
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

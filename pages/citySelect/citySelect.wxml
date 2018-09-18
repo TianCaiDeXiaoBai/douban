@@ -1,0 +1,20 @@
+<!--citySelect/citySelect.wxml-->
+<view class="suggest">
+  <icon type="search" size="13"></icon>
+  <input placeholder="输入城市中文名或拼音" placeholder-class="placeholder" />
+</view>
+<scroll-view scroll-y class="scroll" bindtap="selcity" scroll-into-view="{{scrollId}}" scroll-with-animation>
+  <view class="title" id='定位'>定位城市</view>
+  <view class="citys">
+    <view class="city" data-set="{{position}}">{{position}}</view>
+  </view>
+  <view wx:for="{{li}}" wx:key="key" id="{{item.title}}">
+    <view class="title">{{item.title}}</view>
+    <view class="{{index==0?'citys':''}}">
+      <view wx:for="{{item.item}}" wx:key="item.name" class="city" data-set="{{item.name}}">{{item.name}}</view>
+    </view>
+  </view>
+</scroll-view>
+<view class="list-right-wrapper" catchtap="scrollto">
+  <view wx:for="{{['A','B','C','D','E','F','G','H','J','K','L','M','P','Q','R','S','T','W','X','Y','Z']}}" wx:key="*this" id="{{'index'+index}}" class=".right-item" data-to="{{item}}" >{{item}}</view>
+</view>

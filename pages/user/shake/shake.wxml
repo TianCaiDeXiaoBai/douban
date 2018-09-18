@@ -1,0 +1,21 @@
+<view class="debug" bindtap="play" hidden="{{!debug}}">
+    <view>摇一摇调试数据</view>
+    <view>x: {{x}}</view>
+    <view>y: {{y}}</view>
+    <view>z: {{z}}</view>
+    <view>showFilm: {{showFilm}}</view>
+    <view>loaded: {{loaded}}</view>
+    <view>change test: {{test}}</view>
+</view>
+
+<view class="welcome" style="background-image: url({{shakeWelcomeImg}})"></view>
+
+    <view class="message-area" hidden="{{message.visiable ? false : true}}">
+        <view class="message">
+            <view class="message-icon message-icon-{{message.icon}}"></view>
+            <view class="message-content">{{message.content}}</view>
+        </view>
+    </view>
+<!-- 摇一摇音效 -->
+<audio src="{{shakeSoundUrl}}" id="shakeSound"></audio>
+<audio src="{{shakeCompleteSoundUrl}}" id="shakeCompleteSound"></audio>

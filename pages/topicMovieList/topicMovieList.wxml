@@ -1,0 +1,25 @@
+<!--topicMovieList/topicMovieList.wxml-->
+<import src="/pages/movieRatingTemplate/movieRatingTemplate.wxml" />
+<view class="container">
+  <view class="session-topic">
+    <scroll-view style="height:{{windowHeight}}px" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
+      <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="item">
+        <view class="topic-wrapper" bindtap="bindMovieDetail" data-id="{{item.id}}">
+          <view class="topic-header topic-header-spacing">
+            <text class="topic-index">{{index + 1}}</text>
+          </view>
+          <view class="topic-movie-content">
+            <image class="poster" src="{{item.images.medium}}"></image>
+            <view class="movie-summary">
+              <text class="name">{{item.title}}</text>
+              <block for="{{[item.rating]}}" for-item="item">
+                <template is="ratingTmp" data="{{...item}}" />
+              </block>
+              <text class="desc">{{item.year}}/{{item.genres}}/{{item.directors}}/{{item.casts}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+/** pages/movie/movie.wxss **/
+@import "/pages/movieGridTmp/movieGridTmp.wxss";
+@import "/pages/topicGridTmp/topicGridTmp.wxss"; 
+
+.movie-scroll, topicGrid-scroll {
+  width: 100%;
+  white-space: nowrap;
+}
+.search-placeholder {
+  flex: 1;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  color: #9e9e9e;
+}
+
+.topic-swiper {
+   height: 800rpx; 
+}
+
+.topic-all-txt{
+  color: #AAAAAA;
+  text-align: center;
+  font-size: 30rpx;
+  width: 750rpx;
+}

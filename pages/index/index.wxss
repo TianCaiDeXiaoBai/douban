@@ -1,0 +1,76 @@
+/* index.wxss */
+ @import "/pages/movieListTemplate/movieListTemplate.wxss"; 
+
+
+.session-movie {
+  background: #fff;
+  border-width: 1px 0px 0px 0px;
+  border-style: solid;
+  border-color: #e6e6e6;
+}
+
+.session-movie-spacing {
+  margin-top: 0rpx;
+}
+
+.session-content-spacing {
+  padding: 0rpx 30rpx 0rpx 30rpx;
+  margin-top: 0rpx;
+  box-sizing: border-box;
+}
+
+.session-tab {
+  width: 100%;
+  display: flex;
+  /* position: fixed; */
+  background: #fff;
+  z-index: 1;
+}
+
+.session-tab-spacing {
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: #e6e6e6;
+}
+.navigator-hover{
+  margin-left:40rpx; 
+  margin-right: 40rpx;
+}
+.tab-name {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: 600;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+}
+
+.tab-selected {
+  color: #32cd32;
+  border-bottom: 2px solid #32cd32;
+}
+
+.tab-normal {
+  color: #9e9e9e;
+}
+
+.scroll-movie {
+  height:100vh;
+}
+
+.search-input {
+ /* border: green 2rpx solid; */
+ margin-left: 10rpx;
+ margin-right: 10rpx;
+ width: 530rpx; 
+ background-color: #e6e6e6;
+}
+.dot-bottom {  
+  width: 10rpx;
+  height: 10rpx;
+  border:#666 solid;
+  border-width: 1px 1px 0 0;
+  transform: rotate(135deg);
+  margin-bottom: 20rpx;
+  margin-left:5rpx 
+}  

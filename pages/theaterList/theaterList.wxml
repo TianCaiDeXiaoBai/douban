@@ -1,0 +1,69 @@
+<!--pages/theaterList/theaterList.wxml-->
+<import src="../../common/template/theaterList.wxml" />
+<view>
+  <image src="{{movie.images.large}}" class="filter"></image>
+</view>
+<view class="head">
+  <view class="cover">
+    <navigator url="" class="playUrl">
+      <image src="{{movie.images.large}}" style="width:212rpx;height:290rpx;"></image>
+    </navigator>
+    <view class="jianjie">
+      <view>
+        <view class="mTitle">{{movie.title}}</view>
+      </view>
+      <view class="rater">
+        <view class="space">
+          <text class="rateN">{{movie.rating}}</text>
+          <text class="rateP">({{movie.commentsCount}}人测)</text>
+        </view>
+      </view>
+      <view class="font">
+        {{movie.genres}}
+      </view>
+      <view class="font">
+        {{movie.countries}}
+      </view>
+      <view class="font">
+        {{movie.date}}
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class="head">
+  <scroll-view scroll-x class="scroll-H">
+    <view wx:for="{{weekday}}" wx:key="*this" class="scroll-H-item {{activeIndex==index? 'active':''}}" id="{{index}}" catchtap="selDate">{{item}}</view>
+  </scroll-view>
+</view> -->
+<scroll-view scroll-y class="body">
+  <block wx:for="{{theater}}">
+    <block wx:for="{{item}}">
+      <navigator url="../shop/shop?id={{movie.id}}&nm={{item.nm}}&addr={{item.addr}}" class= class="theater">
+        <view class="shop">
+          <view class="theName">{{item.nm}}</view>
+          <view class="lower">
+            <text class="lowerN">{{item.price}}</text>
+            <text class="lowerL">元起</text>
+          </view>
+        </view>
+        <view class="adress">{{item.addr}}</view>
+        <view class="tips">
+          <view wx:for="{{item.tips.blue}}" class="blue tipC">{{item}}</view>
+          <view wx:for="{{item.tips.orang}}" class="orang tipC">{{item}}</view>
+        </view>
+        <view class=" des" wx:if="{{item.hui}}">
+          <view class="huiL letter">惠</view>
+          <view>{{item.hui}}</view>
+        </view>
+        <view class=" des" wx:if="{{item.ka}}">
+          <view class="kaL letter">卡</view>
+          <view>{{item.ka}}</view>
+        </view>
+        <view class="times" wx:if="{{item.times}}">
+          <view>近期场次:</view>
+          <view>{{item.times}}</view>
+        </view>
+      </navigator>
+    </block>
+  </block>
+</scroll-view>

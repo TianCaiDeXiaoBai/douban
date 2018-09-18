@@ -1,0 +1,8 @@
+<template name="ratingTmp">
+  <view class="rating">
+    <view class="rating-star allstar{{rating.average | 0}}">
+      <!-- <image class='rating-star' src='../images/ic_rating_s.png'></image> -->
+    </view>
+    <text class="rating-average">{{rating.average}}</text>
+  </view>
+</template>

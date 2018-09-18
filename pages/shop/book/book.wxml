@@ -1,0 +1,22 @@
+<!--pages/shop/book/book.wxml-->
+<view class="container">
+  <view class="price">
+    <view class="txt-center">
+      <text>￥{{totalPrice}}</text>
+    </view>
+  </view>
+  <view class="book">
+    <radio-group class="radios">
+      <label wx:for="{{payType}}" class="radio-item">
+        <view>
+          <image class="icon" src="{{item.img}}"></image>
+          {{item.value}}
+        </view>
+        <radio value="{{item.name}}" checked="{{item.checked}}" />
+      </label>
+    </radio-group>
+  </view>
+  <view class="btn"> 
+    <button type='primary' bindtap='confirmPay'>确认支付</button>
+  </view>
+</view>

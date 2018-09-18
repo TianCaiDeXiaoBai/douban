@@ -1,0 +1,38 @@
+<!-- index.wxml -->
+<import src="/pages/movieListTemplate/movieListTemplate.wxml" />
+
+<view class="container">
+  <view class="session-header"> 
+    <navigator url="../citySelect/citySelect" hover-class="navigator-hover">
+      <label class="session-header">
+        <text style="white-space:nowrap ">{{city}}</text>
+        <span class="dot-bottom"></span> 
+      </label>
+    </navigator>
+    <navigator url="../search/search" hover-class="navigator-hover">
+      <input  class="search-input" placeholder="请输入搜索关键词"/>
+    </navigator>
+  </view>
+  <view class="session-tab session-tab-spacing">
+    <text class="tab-name {{showIntheaters? 'tab-selected' : 'tab-normal'}} " bindtap="bindSelected" data-tab-id="{{tabIntheaters}}">正在热映</text>
+    <text class="tab-name {{showComingSoon ? 'tab-selected' : 'tab-normal'}}" bindtap="bindSelected" data-tab-id="{{tabComingsoon}}">即将上映</text>
+  </view>
+  <view class="session-movie session-movie-spacing">
+    <view class="session-content">
+      <block wx:if="{{showIntheaters}}">
+        <scroll-view class="scroll-movie" style="height:{{windowHeight*0.8}}px" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
+          <block wx:for="{{intheaters.movies}}" wx:for-item="item" wx:key="item.id">
+            <template is="movieListTmp" data="{{...item}}" />
+          </block>
+        </scroll-view>
+      </block>
+      <block wx:if="{{showComingSoon}}">
+        <scroll-view class="scroll-movie" style="height:{{windowHeight*0.8}}px" scroll-y="true" bindscrolltolower="handleLower" bindscrolltoupper="handleUpper">
+          <block wx:for="{{comingsoon.movies}}" wx:for-item="item" wx:key="item.id">
+            <template is="movieListTmp" data="{{...item}}" />
+          </block>
+        </scroll-view>
+      </block>
+    </view>
+  </view>
+</view>

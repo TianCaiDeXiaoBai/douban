@@ -1,0 +1,12 @@
+<!--pages/topicGridTmp/topicGridTmp.wxml-->
+<import src="/pages/movieRatingTemplate/movieRatingTemplate.wxml" />
+<template name="topicGridTmp">
+    <view class = "topic"  bindtap="bindMovieDetail" data-id="{{id}}">
+      <text>{{idx}}</text>
+       <image class= "topic-poster" src="{{images.small}}"></image> 
+      <view class = "topicGrid-content">
+        <text class="name">{{title}}</text>
+        <template is="ratingTmp" data="{{rating}}" />
+      </view>
+    </view>
+</template>
